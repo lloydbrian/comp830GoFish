@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+*.class
+
+# Maven generated files/binaries
+target/
+
+# Clover related files
+.clover
+
+# Archives and Logs
+*nohup*
+*.tar.gz
+*.gz
+*.zip
+*.key
+*.jar
+*.ear
+*.log
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Mac DS_Store files
+.DS_Store
+/bin/
