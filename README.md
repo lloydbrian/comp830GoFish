@@ -1,4 +1,4 @@
-# Welcome to Git repository of GoFish Game.
+# Welcome to the Git repository of GoFish Game.
 
 # COMP830: Object-Oriented
 * Lloyd V. Dagoc
