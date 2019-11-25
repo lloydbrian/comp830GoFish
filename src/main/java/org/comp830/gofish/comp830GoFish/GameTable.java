@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
+import org.comp830.gofish.comp830GoFish.card.Card;
 import org.comp830.gofish.comp830GoFish.card.Deck;
 import org.comp830.gofish.comp830GoFish.game.GoFish;
 import org.comp830.gofish.comp830GoFish.game.GoFish2Player;
@@ -26,7 +27,6 @@ public class GameTable {
 	 * 
 	 */
 	public GameTable() {
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -37,7 +37,6 @@ public class GameTable {
 		GoFish goFishGame;
 		ArrayList<Player> players = new ArrayList<>();
 		Deck gameDeck = new Deck("Undealt Deck");
-		// shuffle the cards before dealing
 		gameDeck.shuffle();
 		
 		System.out.println("Welcome to Go Fish! \n" );
@@ -46,7 +45,6 @@ public class GameTable {
 		System.out.println("Enter 2 for 2-Player Game or 4 for 4-Player Game");
 		int n = reader.nextInt();
 		System.out.println("You are playing with " + n + " players. Cards will now be distributed to all players.");
-
 		
 		if(n == 4) {
 			goFishGame = new GoFish4Player(); 
@@ -60,9 +58,11 @@ public class GameTable {
 			Deck cardsAtHand = new Deck("Player Deck");
 			cardsAtHand.emptyTheDeck();
 			
+			System.out.println("Player: " + i);
 			for(int j = 0; j < goFishGame.getCardsToPlay(); j++) {
-				System.out.println(gameDeck.popCard(j));
-				cardsAtHand.addCard(gameDeck.popCard(j));
+				Card cardDealt = gameDeck.popCard(j);
+				System.out.println("Card #" + j + ": " + cardDealt);
+				cardsAtHand.addCard(cardDealt);
 			}
 			
 			player.setDeck(cardsAtHand);			
