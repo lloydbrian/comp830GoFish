@@ -16,6 +16,7 @@ public class GamePlayer implements Player {
 	private static final String PLAYER_TYPE = "GamePlayer";
 	private String gamePlayed = "";
 	private String playerStatus = "";
+	private boolean isPlayerMe;
 	
 	private Deck myDeck;
 	
@@ -27,6 +28,20 @@ public class GamePlayer implements Player {
 	@Override
 	public void setGame(String game) {
 		gamePlayed = game;
+	}
+
+	/**
+	 * @return the isPlayerMe
+	 */
+	public boolean isPlayerMe() {
+		return isPlayerMe;
+	}
+
+	/**
+	 * @param isPlayerMe the isPlayerMe to set
+	 */
+	public void setPlayerMe(boolean isPlayerMe) {
+		this.isPlayerMe = isPlayerMe;
 	}
 
 	/**
