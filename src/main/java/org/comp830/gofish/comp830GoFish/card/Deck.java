@@ -14,9 +14,7 @@ import org.comp830.gofish.comp830GoFish.*;
  */
 public class Deck extends CardCollection implements DeckInt {
 
-	/**
-	 * 
-	 */
+
 	public Deck(String label) {
 		super(label);
 		for (int suit = 0; suit <= 3; suit++) {

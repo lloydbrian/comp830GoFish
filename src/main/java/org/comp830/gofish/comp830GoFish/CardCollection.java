@@ -21,13 +21,22 @@ public class CardCollection {
 	private String label;
 	private ArrayList<Card> cards;
 	
+	public CardCollection() {
+		this.label = "New Deck";
+		this.cards = new ArrayList<Card>();
+	}
+	
 	public CardCollection(String label) {
 		this.label = label;
 		this.cards = new ArrayList<Card>();
 	}
-
+	
 	public String getLabel() {
 		return label;
+	}
+	
+	public ArrayList getDeckOfCards () {
+		return cards;
 	}
 	
 	public Card getCard(int i) {
@@ -36,6 +45,17 @@ public class CardCollection {
 
 	public void addCard(Card card) {
 		cards.add(card);
+	}
+
+	public Card popCard(Card card) {
+		for(int i = 0; i < cards.size(); i++) {
+			if(cards.get(i).equalsExact(card)) {
+				cards.remove(i);
+				return card;
+			}
+		}
+		
+		return card;
 	}
 
 	public Card popCard(int i) {

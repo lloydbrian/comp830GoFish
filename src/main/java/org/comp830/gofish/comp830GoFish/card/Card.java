@@ -39,10 +39,17 @@ public class Card implements CardInt {
 	  return RANKS[rank] + " of " + SUITS[suit];
 	}
 
+    // User Story 4. Equals is either suit or rank
 	public boolean equals(Card that) {
+		return rank == that.rank || suit == that.suit;
+	}
+
+    // User Story 4. Equals is either suit or rank
+	public boolean equalsExact(Card that) {
 		return rank == that.rank && suit == that.suit;
 	}
 
+	
 	public static void printDeck(Card[] cards) {
 	   for (int i = 0; i < cards.length; i++) {
 	   		System.out.println(cards[i]);

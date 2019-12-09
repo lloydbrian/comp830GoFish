@@ -3,6 +3,11 @@
  */
 package org.comp830.gofish.comp830GoFish.game;
 
+import java.util.ArrayList;
+
+import org.comp830.gofish.comp830GoFish.card.Card;
+import org.comp830.gofish.comp830GoFish.card.Deck;
+
 /**
  * @author 
  * Lloyd Dagoc 2019
@@ -18,5 +23,6 @@ public interface GoFish extends Game {
 	Game goFishGameDecided = null;
 	
 	public int getCardsToPlay();
+	public ArrayList getGoFishMatches(Card fromGameMaster, Deck playerCardsOnHand);
 	
 }
