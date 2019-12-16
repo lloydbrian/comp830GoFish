@@ -64,7 +64,8 @@ public class CardCollection {
 
 	public Card popCard() {
 		int i = size() - 1;
-		return popCard(i);
+		return i < 0 ? null : popCard(i); 
+		//return popCard(i);
 	}
 
 	public int size() {
@@ -106,10 +107,8 @@ public class CardCollection {
 	  }
 
 	public void shuffle() {
-		//Random random = new Random();
 		int ranNumber = ThreadLocalRandom.current().nextInt(1, 100 +1);
 		for (int i = size() - 1; i > 0; i--) {
-			//int j = random.nextInt(i);
 			int j = ThreadLocalRandom.current().nextInt(0, 52);
 			swapCards(i, j);
 	    }
